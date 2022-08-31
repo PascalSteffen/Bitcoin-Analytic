@@ -1,0 +1,87 @@
+.data-diagram-container {
+    padding: 32px 128px;
+
+    mat-hint {
+        color: black;
+    }
+
+    input {
+        color: white;
+    }
+
+    button {
+        color: white;
+        background-color: rgb(1,119,120);
+    }
+
+}
+
+::ng-deep {
+    .mat-form-field-appearance-fill .mat-form-field-flex {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .mat-focused .mat-form-field-label {
+        /*change color of label*/
+        color: white !important;
+    }
+
+    .mat-form-field-underline {
+        /*change color of underline*/
+        background-color: white !important;
+    }
+
+    .mat-form-field-ripple {
+        /*change color of underline when focused*/
+        background-color: white !important;
+    }
+
+    .mat-datepicker-toggle-active {
+        color: rgb(1,119,120) !important;
+    }
+
+    .mat-calendar-body-selected {
+        background-color: rgb(1,119,120) !important;
+    }
+}
+
+.rotate-info {
+    height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 32px;
+    text-align: center;
+    display: none;
+
+    h1 {
+        font-size: 30px;
+    }
+}
+
+::ng-deep 
+
+canvas {
+    background-image: url(../../assets/img/background.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+@media(max-height: 700px) {
+    ::ng-deep.mat-datepicker-content .mat-calendar {
+        width: unset !important;
+        height: unset !important;
+    }
+
+}
+
+@media(max-width: 600px) {
+    .data-diagram-container {
+        display: none;
+    }
+
+    .rotate-info {
+        display: flex !important;
+    }
+}

@@ -1,0 +1,29 @@
+.privacy-container {
+    padding: 0 128px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    transition: all 225ms ease-in-out;
+    color: white;
+
+    h1,
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    a {
+        word-break: break-all;
+    }
+}
+
+.padding-128 {
+    padding-top: 314px !important;
+    transition: all 225ms ease-in-out;
+}
+
+@media (max-width: 580px) {
+    .privacy-container {
+        padding: 0px 32px;
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+}

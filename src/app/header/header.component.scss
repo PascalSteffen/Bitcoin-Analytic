@@ -1,0 +1,15 @@
+mat-toolbar {
+    background-color: rgba(0, 0, 0, 1) !important;
+    padding: 0 128px;
+    border-bottom: 1px solid white;
+
+    .mat-toolbar-row {
+        padding: 0 !important;
+    }
+}
+
+@media(max-width: 600px) {
+    mat-toolbar {
+        padding: 0 32px;
+    }
+}
