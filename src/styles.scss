@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import 'material-icons/iconfont/material-icons.css';
 
 html,
 body {
@@ -31,7 +32,7 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgb(1,119,120);
+    background: rgb(1, 119, 120);
 }
 
 /* Handle on hover */
