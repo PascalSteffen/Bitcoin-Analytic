@@ -1,61 +1,23 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {
-  Chart, ArcElement,
-  LineElement,
-  BarElement,
-  PointElement,
-  BarController,
-  BubbleController,
-  DoughnutController,
-  LineController,
-  PieController,
-  PolarAreaController,
-  RadarController,
-  ScatterController,
-  CategoryScale,
-  LinearScale,
-  LogarithmicScale,
-  RadialLinearScale,
-  TimeScale,
-  TimeSeriesScale,
-  Decimation,
-  Filler,
-  Legend,
-  Title,
-  Tooltip,
-  SubTitle
+  Chart, ArcElement, LineElement, BarElement, PointElement, BarController, BubbleController, DoughnutController, LineController, PieController, PolarAreaController,
+  RadarController, ScatterController, CategoryScale, LinearScale, LogarithmicScale, RadialLinearScale, TimeScale, TimeSeriesScale, Decimation, Filler, Legend,
+  Title, Tooltip, SubTitle
 } from 'chart.js';
 
-Chart.register(ArcElement,
-  LineElement,
-  BarElement,
-  PointElement,
-  BarController,
-  BubbleController,
-  DoughnutController,
-  LineController,
-  PieController,
-  PolarAreaController,
-  RadarController,
-  ScatterController,
-  CategoryScale,
-  LinearScale,
-  LogarithmicScale,
-  RadialLinearScale,
-  TimeScale,
-  TimeSeriesScale,
-  Decimation,
-  Filler,
-  Legend,
-  Title,
-  Tooltip,
-  SubTitle);
+Chart.register(ArcElement, LineElement, BarElement, PointElement, BarController, BubbleController, DoughnutController, LineController, PieController, PolarAreaController,
+  RadarController, ScatterController, CategoryScale, LinearScale, LogarithmicScale, RadialLinearScale, TimeScale, TimeSeriesScale, Decimation, Filler, Legend, Title,
+  Tooltip, SubTitle);
+
 
 @Component({
   selector: 'app-data-diagram',
   templateUrl: './data-diagram.component.html',
   styleUrls: ['./data-diagram.component.scss']
 })
+
+
 export class DataDiagramComponent implements OnInit {
   minDate: Date;
   maxDate: Date;
@@ -85,7 +47,18 @@ export class DataDiagramComponent implements OnInit {
     }
   }
 
-  constructor() {
+  headerDict = {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  }
+
+  requestOptions = {
+    headers: new HttpHeaders(this.headerDict),
+  };
+
+
+  constructor(private http: HttpClient) {
     let today = new Date();
     today.setDate(new Date().getDate())
     this.endDate = today.toISOString().split('T')[0];
@@ -94,19 +67,42 @@ export class DataDiagramComponent implements OnInit {
     this.maxDate = today;
   }
 
+
+  /**
+   * Angular API-Fetch
+   * 
+   */
   ngOnInit(): void {
     this.loadCoinData();
+
   }
 
 
-  async loadCoinData() {
+  /**
+   * Angular API-Fetch with HTTPClientModul
+   * 
+   */
+  loadCoinData() {
     let url = `https://data.nasdaq.com/api/v3/datasets/BCHAIN/MKPRU?start_date=${this.inputDate}&end_date=${this.endDate}&api_key=M69Bd6qf2tiPoCNSKyqE`;
-    let response = await fetch(url);
-    let responseAsJSON = await response.json();
-
-    this.iteration(responseAsJSON)
-    this.loadData();
+    this.http.get(url, this.requestOptions).subscribe(res => {
+      this.iteration(res)
+      this.loadData();
+    });
   }
+
+
+  /**
+   * JavaScript API-Fetch
+   * 
+   */
+  /*  async loadCoinData() {
+      let url = `https://data.nasdaq.com/api/v3/datasets/BCHAIN/MKPRU?start_date=${this.inputDate}&end_date=${this.endDate}&api_key=M69Bd6qf2tiPoCNSKyqE`;
+      let response = await fetch(url);
+      let responseAsJSON = await response.json();
+  
+      this.iteration(responseAsJSON)
+      this.loadData();
+    } */
 
 
   /**

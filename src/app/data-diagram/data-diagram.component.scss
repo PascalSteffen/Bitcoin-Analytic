@@ -11,7 +11,7 @@
 
     button {
         color: white;
-        background-color: rgb(1,119,120);
+        background-color: rgb(1, 119, 120);
     }
 
 }
@@ -37,11 +37,11 @@
     }
 
     .mat-datepicker-toggle-active {
-        color: rgb(1,119,120) !important;
+        color: rgb(1, 119, 120) !important;
     }
 
     .mat-calendar-body-selected {
-        background-color: rgb(1,119,120) !important;
+        background-color: rgb(1, 119, 120) !important;
     }
 }
 
@@ -58,8 +58,6 @@
         font-size: 30px;
     }
 }
-
-::ng-deep 
 
 canvas {
     background-image: url(../../assets/img/background.jpg);
