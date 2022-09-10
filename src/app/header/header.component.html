@@ -1,14 +1,14 @@
 <mat-toolbar color="primary">
-    <mat-toolbar-row class="flex-between">
-        <span>Bitcoin Analytic</span>
-        <button [matMenuTriggerFor]="menu" mat-icon-button class="example-icon"
-            aria-label="Example icon-button with menu icon">
-            <mat-icon>menu</mat-icon>
-            <mat-menu #menu="matMenu">
-                <button routerLink="/" mat-menu-item>Bitcoin Analytic</button>
-                <button routerLink="/imprint" mat-menu-item>Imprint</button>
-                <button routerLink="/privacy" mat-menu-item>Privacy</button>
-            </mat-menu>
-        </button>
-    </mat-toolbar-row>
+  <mat-toolbar-row class="flex-between">
+    <span>Bitcoin Analytic</span>
+    <button [matMenuTriggerFor]="menu" mat-icon-button class="example-icon"
+      aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+      <mat-menu #menu="matMenu">
+        <button routerLink="/" mat-menu-item>Bitcoin Analytic</button>
+        <button routerLink="/imprint" mat-menu-item>Imprint</button>
+        <button routerLink="/privacy" mat-menu-item>Privacy</button>
+      </mat-menu>
+    </button>
+  </mat-toolbar-row>
 </mat-toolbar>

@@ -70,7 +70,7 @@ export class DataDiagramComponent implements OnInit {
 
   /**
    * Angular API-Fetch
-   * 
+   *
    */
   ngOnInit(): void {
     this.loadCoinData();
@@ -80,7 +80,7 @@ export class DataDiagramComponent implements OnInit {
 
   /**
    * Angular API-Fetch with HTTPClientModul
-   * 
+   *
    */
   loadCoinData() {
     let url = `https://data.nasdaq.com/api/v3/datasets/BCHAIN/MKPRU?start_date=${this.inputDate}&end_date=${this.endDate}&api_key=M69Bd6qf2tiPoCNSKyqE`;
@@ -93,13 +93,13 @@ export class DataDiagramComponent implements OnInit {
 
   /**
    * JavaScript API-Fetch
-   * 
+   *
    */
   /*  async loadCoinData() {
       let url = `https://data.nasdaq.com/api/v3/datasets/BCHAIN/MKPRU?start_date=${this.inputDate}&end_date=${this.endDate}&api_key=M69Bd6qf2tiPoCNSKyqE`;
       let response = await fetch(url);
       let responseAsJSON = await response.json();
-  
+
       this.iteration(responseAsJSON)
       this.loadData();
     } */
@@ -107,7 +107,7 @@ export class DataDiagramComponent implements OnInit {
 
   /**
    * API iteration
-   * @param APIData 
+   * @param APIData
    */
   iteration(APIData: any) {
     for (let i = 0; i < APIData['dataset']['data'].length; i++) {
@@ -121,7 +121,7 @@ export class DataDiagramComponent implements OnInit {
 
   /**
    * clear canvas, clear the arrays and load a new canvas with the new Date.
-   * 
+   *
    */
   onSubmit() {
     this.myChart.destroy();
@@ -135,7 +135,7 @@ export class DataDiagramComponent implements OnInit {
 
   /**
    * create the Canvas with all datas.
-   * 
+   *
    */
   loadData() {
     Chart.defaults.font.size = 15;
