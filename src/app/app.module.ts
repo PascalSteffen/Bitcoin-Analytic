@@ -17,6 +17,7 @@ import { ImprintComponent } from './imprint/imprint.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     MatToolbarModule,
+    MatProgressSpinnerModule,
     FormsModule,
     MatInputModule,
     MatDatepickerModule,

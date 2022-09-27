@@ -66,6 +66,10 @@ canvas {
   background-repeat: no-repeat;
 }
 
+.d-none {
+  display: none;
+}
+
 @media(max-height: 700px) {
   ::ng-deep.mat-datepicker-content .mat-calendar {
     width: unset !important;

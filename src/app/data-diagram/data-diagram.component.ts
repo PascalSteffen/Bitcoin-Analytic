@@ -21,14 +21,15 @@ Chart.register(ArcElement, LineElement, BarElement, PointElement, BarController,
 export class DataDiagramComponent implements OnInit {
   minDate: Date;
   maxDate: Date;
-  inputDate: any = '2020-01-01';
-  endDate: any;
+  inputDate: string = '2022-09-01';
+  endDate: string;
   canvas: any;
-  ctx: any
-  coinPrice: any = []
-  coinDate: any = []
-  name: any;
+  ctx: any;
+  coinPrice: string[] = []
+  coinDate: string[] = []
+  name: string;
   myChart: any;
+  loading: boolean = false;
 
   backgroundColor = [
     'rgb(254,255,254)',
